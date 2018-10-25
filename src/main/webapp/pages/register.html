@@ -3,30 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
-    <title>WeUI</title>
+    <title>蚂蚁搬家-注册</title>
     <!-- 引入 WeUI -->
     <link rel="stylesheet" href="https://res.wx.qq.com/open/libs/weui/1.1.3/weui.min.css"/>
-    <link rel="stylesheet" href="${request.contextPath}/staticResources/css/global.css"/>
+    <link rel="stylesheet" href="../staticResources/css/global.css"/>
 </head>
 <body>
-<header>注册</header>
+<div class="container" id="container">
+    <div class="page js_show home">
+        <header>登录</header>
+        <div class="page__bd">
     <div class="weui-cells weui-cells_form">
         <div class="weui-cell">
-            <div class="weui-cell__hd"><label class="weui-label">邀请码</label></div>
+            <div class="weui-cell__hd"><label class="weui-label">账号名</label></div>
             <div class="weui-cell__bd">
-                <input class="weui-input" type="text" placeholder="请输入师傅提供的邀请码"/>
-            </div>
-        </div>
-        <div class="weui-cell">
-            <div class="weui-cell__hd"><label class="weui-label">师徒关系</label></div>
-            <div class="weui-cell__bd">
-                <input class="weui-input" type="text" placeholder="请输入师徒真实关系"/>
-            </div>
-        </div>
-        <div class="weui-cell">
-            <div class="weui-cell__hd"><label class="weui-label">真实姓名</label></div>
-            <div class="weui-cell__bd">
-                <input class="weui-input" type="text" placeholder="必须与银行卡持卡人一致"/>
+                <input class="weui-input" type="text" placeholder="请输入账号名"/>
             </div>
         </div>
         <div class="weui-cell weui-cell_vcode">
@@ -46,12 +37,7 @@
                 <input class="weui-input" type="number" placeholder="请输入验证码"/>
             </div>
         </div>
-        <div class="weui-cell">
-            <div class="weui-cell__hd"><label class="weui-label">账号名</label></div>
-            <div class="weui-cell__bd">
-                <input class="weui-input" type="text" placeholder="请输入账号名"/>
-            </div>
-        </div>
+
         <div class="weui-cell">
             <div class="weui-cell__hd"><label class="weui-label">密码</label></div>
             <div class="weui-cell__bd">
@@ -64,11 +50,33 @@
                 <input class="weui-input" type="password" placeholder="请再次输入密码"/>
             </div>
         </div>
+
+        <div class="weui-cell">
+            <div class="weui-cell__hd"><label class="weui-label">真实姓名</label></div>
+            <div class="weui-cell__bd">
+                <input class="weui-input" type="text" placeholder="必须与银行卡持卡人一致"/>
+            </div>
+        </div>
+        <div class="weui-cell">
+            <div class="weui-cell__hd"><label class="weui-label">师徒关系</label></div>
+            <div class="weui-cell__bd">
+                <input class="weui-input" type="text" placeholder="请输入师徒真实关系"/>
+            </div>
+        </div>
+        <div class="weui-cell">
+            <div class="weui-cell__hd"><label class="weui-label">邀请码</label></div>
+            <div class="weui-cell__bd">
+                <input class="weui-input" type="text" placeholder="请输入师傅提供的邀请码"/>
+            </div>
+        </div>
+
     </div>
     <br>
     <div class="button-sp-area">
         <a href="javascript:;" class="weui-btn weui-btn_plain-primary">免费注册</a>
     </div>
-<script src="js/jquery.min.js"></script>
+        </div>
+    </div>
+</div>
 </body>
 </html>
