@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="com.ant.dao.UserDao">
+
+    <select id="getUserById" parameterType="String" resultMap="userMap">
+        SELECT *
+        FROM user
+        WHERE id = #{id}
+    </select>
+
+
+    <!-- type由alias指定 -->
+    <resultMap id="userMap" type="user">
+        <id column="id" property="id"></id>
+        <result column="username" property="username"></result>
+        <result column="password" property="password"></result>
+
+    </resultMap>
+
+
+    <!-- 通过拦截器帮助完成分页查询 -->
+  <!--  <select id="queryListWechatFollowerByPage" parameterType="java.util.Map" resultMap="userMap">
+        select * from wechat_follower
+        <where>
+            <if test="wechatFollower.cNickName !=null and wechatFollower.cNickName.length() > 0">c_nickname like '%${wechatFollower.cNickName}%'</if>
+        </where>
+        &lt;!&ndash; limit #{pageInfo.dbIndex} , #{pageInfo.dbNumber} &ndash;&gt;
+    </select>-->
+
+
+
+    <!--<update id="updateWechatFollowIdentity" >
+
+
+    </update>-->
+
+
+</mapper>

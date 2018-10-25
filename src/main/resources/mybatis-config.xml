@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+
+<configuration>
+    <settings>
+        <!-- 打印查询语句 -->
+        <setting name="logImpl" value="STDOUT_LOGGING"/>
+    </settings>
+
+    <typeAliases>
+        <typeAlias type="com.appFoundation.wechat.vo.WechatFollower" alias="wechatFollower"></typeAlias>
+        <typeAlias type="com.appFoundation.system.vo.SysBaseUser" alias="sysBaseUser"></typeAlias>
+        <typeAlias type="com.appFoundation.system.vo.SysBaseRole" alias="sysBaseRole"></typeAlias>
+        <typeAlias type="com.appFoundation.system.vo.SysBaseUserRole" alias="sysBaseUserRole"></typeAlias>
+        <typeAlias type="com.appFoundation.wechat.vo.WechatBaseConf" alias="wechatBaseConf"></typeAlias>
+        <typeAlias type="com.appFoundation.wechat.vo.WechatTokenConf" alias="wechatTokenConf"></typeAlias>
+        <typeAlias type="com.appFoundation.system.vo.SysBaseMenu" alias="sysBaseMenu"></typeAlias>
+        <typeAlias type="com.appFoundation.system.vo.SysBaseRoleMenu" alias="sysBaseRoleMenu"></typeAlias>
+        <typeAlias type="com.appFoundation.system.vo.SysApiAuth" alias="sysApiAuth"></typeAlias>
+        <typeAlias type="com.appFoundation.system.vo.SysApiServerConf" alias="sysApiServerConf"></typeAlias>
+        <typeAlias type="com.appFoundation.system.vo.SysBaseCode" alias="sysBaseCode"></typeAlias>
+        <typeAlias type="com.appFoundation.system.vo.SysSmsTemplate" alias="sysSmsTemplate"></typeAlias>
+        <typeAlias type="com.appFoundation.wechat.vo.WechatFollowerIdentity" alias="wechatFollowerIdentity"></typeAlias>
+        <typeAlias type="com.appFoundation.system.vo.WechatMenu" alias="wechatMenu"></typeAlias>
+        <typeAlias type="com.appFoundation.system.vo.SysWechatFollowerVeh" alias="sysWechatFollowerVeh"></typeAlias>
+        <typeAlias type="com.appFoundation.wechat.vo.WechatFollowerIdentity" alias="wechatFollowerIdentity"></typeAlias>
+        <typeAlias type="com.appFoundation.system.vo.SysScheduleJob" alias="sysScheduleJob"></typeAlias>
+        <typeAlias type="com.appFoundation.system.vo.SysScheduleType" alias="sysScheduleType"></typeAlias>
+        <typeAlias type="com.appFoundation.wechat.vo.WechatFollowerVeh" alias="wechatFollowerVeh"></typeAlias>
+        <typeAlias type="com.appFoundation.system.vo.SysIlllegalQueryInform" alias="sysIlllegalQueryInform"></typeAlias>
+        <typeAlias type="com.appFoundation.system.vo.SysIlllegalStatistics" alias="sysIlllegalStatistics"></typeAlias>
+        <typeAlias type="com.appFoundation.system.vo.SysApiLog" alias="sysApiLog"></typeAlias>
+        <typeAlias type="com.appFoundation.system.vo.SysOperateLog" alias="sysOperateLog"></typeAlias>
+        <typeAlias type="com.appFoundation.system.vo.SysPushMessage" alias="sysPushMessage"></typeAlias>
+        <typeAlias type="com.appFoundation.system.vo.SysWexTemplate" alias="sysWexTemplate"></typeAlias>
+        <typeAlias type="com.appFoundation.system.vo.VehStatusSend" alias="vehStatusSend"></typeAlias>
+        <typeAlias type="com.appFoundation.system.vo.SysTemporaryBind" alias="sysTemporaryBind"></typeAlias>
+        <typeAlias type="com.appFoundation.system.vo.SysWechatSubscribeVeh" alias="syswechatSubscribeVeh"></typeAlias>
+        <typeAlias type="com.appFoundation.system.vo.ReserveOrder" alias="reserveOrder"></typeAlias>
+        <typeAlias type="com.appFoundation.system.vo.SysWechatMyOrder" alias="sysWechatMyOrder"></typeAlias>
+        <typeAlias type="com.appFoundation.system.vo.SubscribeFollower" alias="subscribeFollower"></typeAlias>
+        <typeAlias type="com.appFoundation.system.vo.TemporaryBindFollower" alias="temporaryBindFollower"></typeAlias>
+        <typeAlias type="com.appFoundation.wechat.vo.WechatIllegalQueryHistory" alias="wechatIllegalQueryHistory"></typeAlias>
+        <typeAlias type="com.appFoundation.wechat.vo.WechatSubscribeVeh" alias="wechatSubscribeVeh"></typeAlias>
+        <typeAlias type="com.appFoundation.wechat.vo.WechatReservVehDetail" alias="wechatReservVehDetail"></typeAlias>
+        <typeAlias type="com.appFoundation.wechat.vo.WechatReservVehOrder" alias="wechatReservVehOrder"></typeAlias>
+        <typeAlias type="com.appFoundation.wechat.vo.WechatMyOrder" alias="wechatMyOrder"></typeAlias>
+        <typeAlias type="com.appFoundation.wechat.vo.WechatGoodPlateNo" alias="wechatGoodPlateNo"></typeAlias>
+        <typeAlias type="com.appFoundation.wechat.vo.WechatCollectPlateNo" alias="wechatCollectPlateNo"></typeAlias>
+        <typeAlias type="com.appFoundation.wechat.vo.WechatTemporaryBind" alias="wechatTemporaryBind"></typeAlias>
+        <typeAlias type="com.appFoundation.wechat.vo.WechatNumberParagraphRemind" alias="wechatNumberParagraphRemind"></typeAlias>
+        <typeAlias type="com.appFoundation.system.vo.SysWechatNumberParagraphRemind" alias="sysWechatNumberParagraphRemind"></typeAlias>
+        <typeAlias type="com.appFoundation.wechat.vo.WechatNumberParagraph" alias="wechatNumberParagraph"></typeAlias>
+        <typeAlias type="com.appFoundation.wechat.vo.WechatSubscribeIdentify" alias="wechatSubscribeIdentify"></typeAlias>
+    </typeAliases>
+
+    <plugins>
+        <!-- 声明一个分页拦截器 -->
+        <!-- -->
+        <plugin interceptor="com.appFoundation.system.interceptor.PageInterceptor">
+            <!-- 给拦截器传入一个参数（该参数在拦截器中判断拦截到的sql是不是需要分页的使用） -->
+            <property name="sqlIdByPageRegex" value=".+ByPage$"/>
+        </plugin>
+    </plugins>
+</configuration>
+
