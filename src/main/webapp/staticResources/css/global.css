@@ -18,9 +18,10 @@ html,body{
 .center{
     margin: 0 auto;
 }
-.page__bd{
+.page__bd ,.button-sp-area{
     padding: 0 15px;
 }
+
 .tip{
     font-size: small;
     padding: 10px;
