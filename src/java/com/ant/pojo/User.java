@@ -6,6 +6,15 @@ import org.springframework.stereotype.Repository;
 public class User {
     private String username;
     private  String password;
+    private String telephone;
+    private String welCode;
+    private String realname;
+   private int masterId;
+   private int bankcardId;
+   private Double balance;
+
+
+
 
     public String getUsername() {
         return username;

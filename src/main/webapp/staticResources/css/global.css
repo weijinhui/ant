@@ -18,7 +18,7 @@ html,body{
 .center{
     margin: 0 auto;
 }
-.page__bd ,.button-sp-area{
+.page__bd {
     padding: 0 15px;
 }
 
@@ -52,4 +52,14 @@ html,body{
 .receive_task_img img{
     width: 100%;
     height: 100%;
+}
+.receive_task_require{
+    font-size: 14px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: #999999;
+    border-bottom: 1px solid;
+}
+.weui-tab{
+    height: auto;
 }
