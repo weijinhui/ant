@@ -1,7 +1,7 @@
 package com.ant.controller;
 
 import com.ant.form.ResultSetForm;
-import com.ant.service.UserService;
+import com.ant.service.UserServiceImpl.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -16,7 +16,7 @@ import java.util.Map;
 @Controller
 public class UserController {
     @Autowired
-    private UserService userService;
+    private UserServiceImpl userServiceImpl;
 
     @RequestMapping(value = "/login_ajax")
     public ResponseEntity<ResultSetForm> login(@RequestBody Map<String,Object> map) {
@@ -26,7 +26,7 @@ public class UserController {
             String account = String.valueOf(map.get("account"));
             String password = String.valueOf(map.get("password"));
 
-            boolean isSuccess = userService.login(account,password);
+            boolean isSuccess = userServiceImpl.login(account,password);
             if (isSuccess) {
                 rsf.setResult(true, ReturnCode.Success, "ok.");
             } else {
@@ -44,5 +44,8 @@ public class UserController {
         mav.setViewName("index");
         return mav;
     }
+
+
+
 
 }

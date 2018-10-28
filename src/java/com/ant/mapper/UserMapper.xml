@@ -4,15 +4,24 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 
-<mapper namespace="com.ant.dao.UserDao">
+<mapper namespace="com.ant.dao.IUserDao">
 
     <select id="getUserById" parameterType="String" resultMap="userMap">
         SELECT *
         FROM user
         WHERE id = #{id}
     </select>
-
-
+    <insert id="addUser" parameterType="User">
+            INSERT INTO ${t_user}
+        <foreach collection="keys" item="k" index="index" open="(" separator="," close=")">
+            ${k}
+        </foreach>
+            VALUE
+        <foreach collection="keys" item="k" index="index" open="(" separator="," close=")">
+            '${params[k]}'
+        </foreach>
+      /*  (#username#, #realname#, #password#, #idNo#, #telephone#, #fatherId#, #createTime#, #updateTime#, #balance#)*/
+    </insert>
     <!-- type由alias指定 -->
     <resultMap id="userMap" type="user">
         <id column="id" property="id"></id>
