@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <title>微赚</title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/weui/1.1.3/style/weui.min.css">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/jquery-weui/1.2.1/css/jquery-weui.min.css">
+    <link rel="stylesheet" href="${request.contextPath}/staticResources/css/weizhuan.css">
+</head>
+<html >
+
+
+<body >
+<div class="weui-toptips weui-toptips_warn js_tooltips">错误提示</div>
+<div class="container" id="container">
+    <div class="page home js_show">
+        <header>
+            <div class="title">添加平台</div>
+        </header>
+        <div class="page__bd ">
+            <div class="weui-cells weui-cells_form">
+                <div class="weui-cell">
+                    <div class="weui-cell__hd"><label class="weui-label">平台名</label></div>
+                    <div class="weui-cell__bd">
+                        <input class="weui-input" type="text" id="appName" placeholder="平台名">
+                    </div>
+                </div>
+                <div class="weui-cell">
+                    <div class="weui-cell__hd"><label class="weui-label">关键字</label></div>
+                    <div class="weui-cell__bd">
+                        <input class="weui-input" type="text" id="keyword" placeholder="关键字">
+                    </div>
+                </div>
+                <div class="weui-flex keyword">
+                    <div class="weui-flex__item">本佣立返</div>
+                    <div class="weui-flex__item">本佣货返</div>
+                    <div class="weui-flex__item">淘宝</div>
+                    <div class="weui-flex__item">京东</div>
+                    <div class="weui-flex__item">拼多多</div>
+                </div>
+                <div class="weui-cells__title">平台简介</div>
+                <div class="weui-cell">
+                    <div class="weui-cell__bd">
+                        <textarea class="weui-textarea" id="appInfo" placeholder="" rows="3"></textarea>
+                    </div>
+                </div>
+                <div class="weui-cells__title">注册链接</div>
+                <div class="weui-cell">
+                    <div class="weui-cell__bd">
+                        <textarea class="weui-textarea" id="appRegisterUrl" placeholder="" rows="3"></textarea>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="page__bd_spacing">
+                <a href="javascript:void(0)" id="addApp" class="weui-btn weui-btn_primary">添加</a>
+            </div>
+        </div>
+        <!--<div class="page__ft j_bottom">-->
+            <!--<a href="javascript:home()">cool</a>-->
+        <!--</div>-->
+    </div>
+</div>
+
+    <script src="https://cdn.bootcss.com/jquery/1.11.0/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery-weui/1.2.1/js/jquery-weui.min.js"></script>
+<script>
+    $(document).ready(function () {
+
+        $(".keyword .weui-flex__item ").click(function () {
+                var text = $(this).text().trim();
+                var keyword = $("#keyword").val();
+                if(keyword==""){
+                    keyword = keyword +text;
+                } else {
+                    if(keyword.indexOf(text)==-1){
+                        keyword = keyword +"," +text;
+                    } else if(keyword.indexOf(text)==0){
+                        keyword = keyword.replace(text,"");
+                        if(keyword.substr(0, 1) == ","){
+                            keyword=keyword.slice(1);
+                        }
+                    } else{
+                        keyword = keyword.replace(","+text,"");
+                    }
+                }
+                $("#keyword").val(keyword)
+        });
+
+        $("#addApp").click(function () {
+            $.showLoading("加载中");
+            var appName = $("#appName").val();
+            var appRegisterUrl = $("#appRegisterUrl").val();
+            var appInfo = $("#appInfo").val();
+            var keyword = $("#keyword").val();
+
+            $.ajax({
+                url:"${request.contextPath}/addApp",
+                type:"POST",
+                data:{
+                    "appName":appName,
+                    "appRegisterUrl":appRegisterUrl,
+                    "appInfo":appInfo,
+                    "keyword":keyword
+                },
+                dataType:"json",
+                error:function (XMLHttpRequest, textStatus, errorThrown) {
+                    $.hideLoading();
+                    $.alert("请求失败:readyState"+XMLHttpRequest.readyState+",status"+XMLHttpRequest.status+",msg:"+textStatus);
+                },
+                success:function (data) {
+                    $.hideLoading();
+                    if(data.code == "200"){
+
+                    }else {
+                        $.alert(data.message);
+                    }
+                }
+            });
+        });
+    });
+
+</script>
+</body>
+</html>
