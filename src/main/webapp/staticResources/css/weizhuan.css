@@ -475,31 +475,28 @@ ul {
     -webkit-animation: b .2s forwards;
     animation: b .2s forwards
 }
+.keyword .weui-flex__item{
+    font-size: 12px;
+    text-align:center;
+    padding-top: 5px;
+}
+header {
+    height:45px;
+    background: #1aad19;
+    color: #ffffff;
+}
+header .back{
+    font-size: 16px;
+    float: left;
+    padding:10px;
+}
+header .title{
+    width: 100px;
+    margin: 0 auto;
+    font-size: 20px;
 
-.movie_img{
-    width: 100%;
-    height: 100%;
+    padding:6px;
 }
-.movie-flex {
-    width: 100%;
-}
-.movie-flex__item {
-    width:33.33%;
-    margin-top: 5px;
-    float: left;
-}
-.movie_title{
-    margin-top: -5px;
-    font-size: 14px;
-}
-.movie-type{
-    width: 100%;
-    float: left;
-}
-.movie-type__item {
-    float: left;
-    padding: 5px;
-}
-.movie_type_text {
-    font-size: 14px;
+header .back a {
+    color: #ffffff;
 }

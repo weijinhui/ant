@@ -1,100 +1,120 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
-    <title>蚂蚁妈妈-接单</title>
-    <!-- 引入 WeUI -->
-    <link rel="stylesheet" href="https://res.wx.qq.com/open/libs/weui/1.1.3/weui.min.css"/>
-    <link rel="stylesheet" href="../staticResources/css/global.css"/>
+    <title>cool</title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/weui/1.1.3/style/weui.min.css">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/jquery-weui/1.2.1/css/jquery-weui.min.css">
+    <link rel="stylesheet" href="../staticResources/css/global.css">
 </head>
-<body>
-<div class="container" id="container">
-    <div class="page js_show home">
-        <header>接单</header>
-        <div class="page__bd">
-            <div class="weui-tab">
-                <br>
-                <div class="weui-cells">
-                    <div class="weui-cell">
-                        <div class="weui-cell__bd">
-                            <p>今日</p>
-                        </div>
-                        <div class="weui-cell__ft">6单</div>
-                    </div>
-                    <div class="weui-cell">
-                        <div class="weui-cell__bd">
-                            <p>近一周</p>
-                        </div>
-                        <div class="weui-cell__ft">18单</div>
-                    </div>
-                    <div class="weui-cell">
-                        <div class="weui-cell__bd">
-                            <p>近30天</p>
-                        </div>
-                        <div class="weui-cell__ft">40单</div>
-                    </div>
-                    <div class="weui-cell">
-                        <div class="weui-cell__bd">
-                            <p>今日佣金</p>
-                        </div>
-                        <div class="weui-cell__ft">100元</div>
-                    </div>
-                    <div class="weui-cell">
-                        <div class="weui-cell__bd">
-                            <p>本月佣金</p>
-                        </div>
-                        <div class="weui-cell__ft">2800元</div>
-                    </div>
-                    <div class="weui-cell">
-                        <div class="weui-cell__bd">
-                            <p>今日推广</p>
-                        </div>
-                        <div class="weui-cell__ft">50元</div>
-                    </div>
-                    <div class="weui-cell">
-                        <div class="weui-cell__bd">
-                            <p>本月推广</p>
-                        </div>
-                        <div class="weui-cell__ft">520元</div>
-                    </div>
-                </div>
-                <br>
-                <div class="button-sp-area">
-                    <a href="receiveTask.html" class="weui-btn  weui-btn_plain-primary">我要接单</a>
-                </div>
-                <!--<br>
-                <div class="button-sp-area">
-                    <a href="javascript:;" class="weui-btn  weui-btn_plain-primary">活动单</a>
-                </div>-->
-            </div>
-        </div>
-        <div class="weui-tabbar">
-            <div class="weui-navbar__item weui-bar__item_on">
-                <a href="index.html" class="weui-tabbar__item weui-bar__item">
-                    <p class="weui-tabbar__label">接单</p>
-                </a>
-            </div>
-            <div class="weui-navbar__item">
-                <a href="task.html" class="weui-tabbar__item weui-bar__item">
-                    <p class="weui-tabbar__label">任务</p>
-                </a>
-            </div>
-            <div class="weui-navbar__item">
-                <a href="person.html" class="weui-tabbar__item weui-bar__item">
-                    <p class="weui-tabbar__label">我</p>
-                </a>
-            </div>
-        </div>
-    </div>
+<html >
 
-    <script type="text/javascript" class="tabbar js_show">
-        $(function () {
-            $('.weui-tabbar__item').on('click', function () {
-                $(this).addClass('weui-bar__item_on').siblings('.weui-bar__item_on').removeClass('weui-bar__item_on');
-            });
-        });</script>
+
+<body >
+<div class="weui-toptips weui-toptips_warn js_tooltips">错误提示</div>
+<div class="container" id="container">
+    <div class="page home js_show">
+        <div class="page__hd">
+            <div class="movie-type">
+                <div class="movie-type__item">类型</div>
+                <div class="movie-type__item"><div class="movie_type_text">恐怖</div></div>
+                <div class="movie-type__item"><div class="movie_type_text">喜剧</div></div>
+                <div class="movie-type__item"><div class="movie_type_text">武侠</div></div>
+                <div class="movie-type__item"><div class="movie_type_text">科幻</div></div>
+                <div class="movie-type__item"><div class="movie_type_text">恐怖</div></div>
+                <div class="movie-type__item"><div class="movie_type_text">喜剧</div></div>
+                <div class="movie-type__item"><div class="movie_type_text">武侠</div></div>
+                <div class="movie-type__item"><div class="movie_type_text">科幻</div></div>
+            </div>
+            <div class="movie-type">
+                <div class="movie-type__item">地区</div>
+                <div class="movie-type__item"><div class="movie_type_text">欧美</div></div>
+                <div class="movie-type__item"><div class="movie_type_text">华语</div></div>
+                <div class="movie-type__item"><div class="movie_type_text">日韩</div></div>
+                <div class="movie-type__item"><div class="movie_type_text">印泰</div></div>
+                <div class="movie-type__item"><div class="movie_type_text">其他</div></div>
+            </div>
+            <div class="movie-type">
+                <div class="movie-type__item">年份</div>
+                <div class="movie-type__item"><div class="movie_type_text">2018</div></div>
+                <div class="movie-type__item"><div class="movie_type_text">2017</div></div>
+                <div class="movie-type__item"><div class="movie_type_text">2011-2016</div></div>
+                <div class="movie-type__item"><div class="movie_type_text">2001-2010</div></div>
+                <div class="movie-type__item"><div class="movie_type_text">1900-2000</div></div>
+            </div>
+        </div>
+        <div class="page__bd ">
+            <div class="movie-flex">
+                <div class="movie-flex__item">
+                    <div class="placeholder">
+                        <img class="movie_img" src="../staticResources/image/xhs.jpg">
+                        <div class="movie_title">西红柿首富</div>
+                    </div>
+                </div>
+                <div class="movie-flex__item">
+                    <div class="placeholder">
+                        <img class="movie_img" src="../staticResources/image/xhs.jpg">
+                        <div class="movie_title">西红柿首富</div>
+                    </div>
+                </div>
+                <div class="movie-flex__item">
+                    <div class="placeholder">
+                        <img class="movie_img" src="../staticResources/image/xhs.jpg">
+                        <div class="movie_title">西红柿首富</div>
+                    </div>
+                </div>
+                <div class="movie-flex__item">
+                    <div class="placeholder">
+                        <img class="movie_img" src="../staticResources/image/xhs.jpg">
+                        <div class="movie_title">西红柿首富</div>
+                    </div>
+                </div>
+                <div class="movie-flex__item">
+                    <div class="placeholder">
+                        <img class="movie_img" src="../staticResources/image/xhs.jpg">
+                        <div class="movie_title">西红柿首富</div>
+                    </div>
+                </div>
+                <div class="movie-flex__item">
+                    <div class="placeholder">
+                        <img class="movie_img" src="../staticResources/image/xhs.jpg">
+                        <div class="movie_title">西红柿首富</div>
+                    </div>
+                </div>
+                <div class="movie-flex__item">
+                    <div class="placeholder">
+                        <img class="movie_img" src="../staticResources/image/xhs.jpg">
+                        <div class="movie_title">西红柿首富</div>
+                    </div>
+                </div>
+                <div class="movie-flex__item">
+                    <div class="placeholder">
+                        <img class="movie_img" src="../staticResources/image/xhs.jpg">
+                        <div class="movie_title">西红柿首富</div>
+                    </div>
+                </div>
+                <div class="movie-flex__item">
+                    <div class="placeholder">
+                        <img class="movie_img" src="../staticResources/image/xhs.jpg">
+                        <div class="movie_title">西红柿首富</div>
+                    </div>
+                </div>
+                <div class="movie-flex__item">
+                    <div class="placeholder">
+                        <img class="movie_img" src="../staticResources/image/xhs.jpg">
+                        <div class="movie_title">西红柿首富</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--<div class="page__ft j_bottom">-->
+            <!--<a href="javascript:home()">cool</a>-->
+        <!--</div>-->
+    </div>
 </div>
-<script src="js/jquery.min.js"></script>
+
+    <script src="https://cdn.bootcss.com/jquery/1.11.0/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery-weui/1.2.1/js/jquery-weui.min.js"></script>
 </body>
 </html>

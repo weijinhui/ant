@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <title>蚂蚁妈妈-接单</title>
+    <!-- 引入 WeUI -->
+    <link rel="stylesheet" href="https://res.wx.qq.com/open/libs/weui/1.1.3/weui.min.css"/>
+    <link rel="stylesheet" href="../../staticResources/css/global.css"/>
+</head>
+<body>
+<div class="container" id="container">
+    <div class="page js_show home">
+
+        <div class="page__bd">
+
+            <div class="weui-tab">
+
+                <div class="weui-tab__panel">
+                    <header>接单</header>
+                <br>
+                <div class="weui-cells">
+                    <div class="weui-cell">
+                        <div class="weui-cell__bd">
+                            <p>今日</p>
+                        </div>
+                        <div class="weui-cell__ft">6单</div>
+                    </div>
+                    <div class="weui-cell">
+                        <div class="weui-cell__bd">
+                            <p>近一周</p>
+                        </div>
+                        <div class="weui-cell__ft">18单</div>
+                    </div>
+                    <div class="weui-cell">
+                        <div class="weui-cell__bd">
+                            <p>近30天</p>
+                        </div>
+                        <div class="weui-cell__ft">40单</div>
+                    </div>
+                    <div class="weui-cell">
+                        <div class="weui-cell__bd">
+                            <p>今日佣金</p>
+                        </div>
+                        <div class="weui-cell__ft">100元</div>
+                    </div>
+                    <div class="weui-cell">
+                        <div class="weui-cell__bd">
+                            <p>本月佣金</p>
+                        </div>
+                        <div class="weui-cell__ft">2800元</div>
+                    </div>
+                    <div class="weui-cell">
+                        <div class="weui-cell__bd">
+                            <p>今日推广</p>
+                        </div>
+                        <div class="weui-cell__ft">50元</div>
+                    </div>
+                    <div class="weui-cell">
+                        <div class="weui-cell__bd">
+                            <p>本月推广</p>
+                        </div>
+                        <div class="weui-cell__ft">520元</div>
+                    </div>
+                </div>
+                    <br>
+                    <div class="button-sp-area">
+                        <a href="receiveTask.html" class="weui-btn  weui-btn_plain-primary">我要接单</a>
+                    </div>
+                </div>
+                <div class="weui-tabbar">
+                    <div class="weui-navbar__item weui-bar__item_on">
+                        <a href="index.html" class="weui-tabbar__item weui-bar__item">
+                            <p class="weui-tabbar__label">接单</p>
+                        </a>
+                    </div>
+                    <div class="weui-navbar__item">
+                        <a href="task.html" class="weui-tabbar__item weui-bar__item">
+                            <p class="weui-tabbar__label">任务</p>
+                        </a>
+                    </div>
+                    <div class="weui-navbar__item">
+                        <a href="person.html" class="weui-tabbar__item weui-bar__item">
+                            <p class="weui-tabbar__label">我</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script type="text/javascript" class="tabbar js_show">
+        $(function () {
+            $('.weui-tabbar__item').on('click', function () {
+                $(this).addClass('weui-bar__item_on').siblings('.weui-bar__item_on').removeClass('weui-bar__item_on');
+            });
+        });</script>
+</div>
+<script src="js/jquery.min.js"></script>
+</body>
+</html>
