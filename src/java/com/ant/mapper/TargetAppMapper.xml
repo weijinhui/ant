@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="com.ant.dao.TargetAppDao">
+
+    <insert id="addTargetApp" parameterType="targetApp" useGeneratedKeys="true" keyProperty="n_id">
+        INSERT  INTO target_app
+        (
+            app_name,
+            app_register_url,
+            app_info,
+            keyword,
+            t_update_tm,
+            t_create_tm
+
+        )
+        VALUES (
+        #{appName},
+        #{appRegisterUrl},
+        #{appInfo},
+        #{keyword},
+        now(),
+        now()
+        )
+    </insert>
+
+    <select id="getTargetAppList" parameterType="targetApp" resultMap="targetAppMap">
+        SELECT *
+        FROM target_app
+        <where>
+            1=1
+            <if test="id !=null and id!='' "> and id = #{id} </if>
+            <if test="appName !=null and appName!='' "> and app_name = #{appName} </if>
+            <if test="appRegisterUrl !=null and appRegisterUrl!='' "> and app_register_url = #{appRegisterUrl} </if>
+            <if test="appInfo !=null and appInfo!='' "> and app_info = #{appInfo} </if>
+            <if test="keyword !=null and keyword!='' "> and keyword = #{keyword} </if>
+        </where>
+    </select>
+    <select id="getTargetAppById" resultMap="targetAppMap">
+        SELECT * FROM target_app where id = #{id}
+    </select>
+    <update id="updateTargetApp" >
+        UPDATE target_app
+        <trim prefix="set" suffixOverrides=",">
+            <if test="appName !=null and appName!='' "> app_name = #{appName}, </if>
+            <if test="appRegisterUrl !=null and appRegisterUrl!='' "> app_register_url = #{appRegisterUrl}, </if>
+            <if test="appInfo !=null and appInfo!='' ">app_info = #{appInfo}, </if>
+            <if test="keyword !=null and keyword!='' "> keyword = #{keyword}, </if>
+            t_update_tm = now()
+        </trim>
+        WHERE id=#{id};
+    </update>
+
+
+
+    <resultMap id="targetAppMap" type="targetApp">
+        <id column="id" property="id"></id>
+        <result column="app_name" property="appName"></result>
+        <result column="app_register_url" property="appRegisterUrl"></result>
+        <result column="app_info" property="appInfo"></result>
+        <result column="keyword" property="keyword"></result>
+        <result column="t_update_tm" property="tUpdateTm"></result>
+        <result column="t_create_tm" property="tCreateTm"></result>
+    </resultMap>
+
+</mapper>

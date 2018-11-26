@@ -1,6 +1,6 @@
-package com.ant.service.UserServiceImpl;
+package com.ant.service.impl;
 
-import com.ant.dao.IUserDao;
+import com.ant.dao.UserDao;
 import com.ant.pojo.User;
 import com.ant.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class UserServiceImpl implements IUserService {
     @Autowired
-    IUserDao userDao;
+    UserDao userDao;
     public boolean login (String username,String password){
         if("weijinhui".equals(username)&&"123456".equals(password)){
             return true;

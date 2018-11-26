@@ -1,7 +1,7 @@
 package com.ant.controller;
 
 import com.ant.form.ResultSetForm;
-import com.ant.service.UserServiceImpl.UserServiceImpl;
+import com.ant.service.impl.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -14,13 +14,12 @@ import org.springframework.web.servlet.ModelAndView;
 import java.util.Map;
 
 @Controller
-public class UserController {
+public class UserController extends BaseController{
     @Autowired
     private UserServiceImpl userServiceImpl;
 
     @RequestMapping(value = "/login_ajax")
     public ResponseEntity<ResultSetForm> login(@RequestBody Map<String,Object> map) {
-        ResultSetForm rsf = new ResultSetForm();
         try {
             // Get param
             String account = String.valueOf(map.get("account"));

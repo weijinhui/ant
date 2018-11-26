@@ -4,7 +4,6 @@ import org.springframework.stereotype.Repository;
 
 import java.sql.Timestamp;
 
-@Repository
 public class User {
     private int id;
     private String username;
